@@ -1,0 +1,20 @@
+.homeBackground{
+    background-image:url(../../Image/Rectangle\ 1.png);
+    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:879px;
+   
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+}
+.homepart{
+   padding-top:190px;
+}

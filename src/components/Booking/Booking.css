@@ -1,0 +1,11 @@
+.bookingPart{
+
+padding-top: 170px;
+   color: white;
+}
+.AllButton{
+   background-color: orange;
+   border: 1px solid orange;
+   padding: 3px 35px;
+   border-radius: 10px;
+}

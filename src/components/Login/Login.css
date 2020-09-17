@@ -1,0 +1,18 @@
+#login{
+   margin-top: 50px;
+   border:1px solid red;
+}
+.newUserBtn{
+    border: none;
+    color:orange;
+    background-color: white;
+}
+.otherBtn{
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: white;
+    padding:0px 15px;
+}
+.otherBtn img{
+    width:30px;
+}
