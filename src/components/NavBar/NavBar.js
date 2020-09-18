@@ -8,7 +8,7 @@ const NavBar = () => {
   const [loggedInUser,setLoggedInUser] = useContext(UserContext)
     return (
         <div className="container fixed-top">
-           <nav className="navbar navbar-expand-lg navbar-light ">
+           <nav className="navbar navbar-expand-lg navbar-light navbar bg-dark">
    <Link className="navbar-brand" to="home">
       <img  src={logo} alt=""/>
   </Link>
@@ -40,7 +40,7 @@ const NavBar = () => {
         <Link className="nav-link login" to="login" >Login</Link>
       </li>
       <li className="nav-item">
-    <Link className="nav-link userName" to="Contact" >{loggedInUser.displayName}</Link>
+    <h5 className="nav-link  text-white" to="Contact" >{loggedInUser.displayName}</h5>
       </li>
     </ul>
     

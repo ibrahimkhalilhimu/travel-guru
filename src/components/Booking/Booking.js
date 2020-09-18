@@ -26,7 +26,7 @@ const Booking = () => {
             <div className="col-md-5">
 
          <h1 > {details.name}</h1>
-    <p>{details.details}</p>
+        <p>{details.details}</p>
 
             </div>
             
@@ -37,20 +37,24 @@ const Booking = () => {
                 <input type="text" required/>
                 <br/>
                 <h5>Destination</h5>
-                <input type="text" name="" id="" required/>
+                <input  type="text" name="" id="" placeholder={details.name} required/>
                 <br/>
                 <h5>From</h5>
                 {/* <input type="text" name="" id=""/> */}
                 <Datepicker selected={selectedDate} onChange={date=>setSelectedDate(date)}
-                datepicker='yyyy/MM/dd'
+              
                 showYearDropdown
                 scrollableMonthYearDropdown
+                placeholder="dd/mm/yyyy"
+                id="datePicker"
+
                 />
                 <h5>To</h5>
                 <Datepicker selected={newSelectedDate} onChange={date=>setNewSelectedDate(date)}
-                datepicker='yyyy/MM/dd'
+               placeholder="dd/mm/yyyy"
                 showYearDropdown
                 scrollableMonthYearDropdown
+                id="datePicker"
                 />
                 {/* <input type="text" name="" id=""/> */}
                 <br/><br/>

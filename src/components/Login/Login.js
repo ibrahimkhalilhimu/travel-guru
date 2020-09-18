@@ -58,8 +58,8 @@ const handleSubmit=(e)=>{
         newUserInfo.success=true
         setUser(newUserInfo);
         setLoggedInUser(newUserInfo);
+        updateUserName(user.displayName)
         history.replace(from);
-        updateUserName(user.firstName + user.lastName)
         console.log(res.user);
     })
     .catch(error=> {
@@ -78,6 +78,7 @@ const handleSubmit=(e)=>{
         setUser(newUserInfo);
         setLoggedInUser(newUserInfo);
         history.replace(from);
+      
          console.log('sign in', res.user);
       })
       .catch(error=> {
@@ -96,7 +97,7 @@ const handleSignIn =()=>{
   .then(res=>{
    const {displayName,email} = res.user;
    const signedIn ={
-      name:displayName,
+      displayName,
       email:email
    }
 
@@ -119,7 +120,7 @@ const handleFbSignIn=()=>{
   .then(function(result) {
     const {displayName} = result.user;
     const signedIn ={
-       name:displayName,
+       displayName,
     }
  
     setUser(signedIn)
@@ -137,6 +138,17 @@ const handleFbSignIn=()=>{
     // ...
   });
 }
+// ResetPassword
+const resetPassword = email=>{
+  var auth = firebase.auth();
+auth.sendPasswordResetEmail(email)
+.then(function() {
+  // Email sent.
+}).catch(function(error) {
+  // An error happened.
+});
+}
+
 // updateName
 
 const updateUserName = (firstName ,lastName) =>{
@@ -167,6 +179,7 @@ const updateUserName = (firstName ,lastName) =>{
                 <br/><br/>
                 <input onBlur={handleInput} type="password" name="password" id="" placeholder="password" required/>
                 <br/><br/>
+              {!newUser &&  <button onClick={()=>resetPassword} className="newUserBtn">Forgot Password</button>}
               {newUser &&  <input onBlur={handleInput} type="password" name="confirmPassword" id="" placeholder="confirm password"/>}
                 <br/><br/>
                 <input className="AllButton" type="submit" value={newUser ?"Create an account":"Login"}/>
