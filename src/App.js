@@ -34,12 +34,13 @@ const [loggedInUser,setLoggedInUser] = useState({})
        <Route path="/login">
       <Login></Login>
        </Route>
-       <Route path="/booking">
+       <PrivateRoute path="/rooms">
+         <Rooms/>
+       </PrivateRoute>
+       <Route path="/:bookingId">
          <Booking/>
        </Route>
-       <Route path="/rooms">
-         <Rooms/>
-       </Route>
+       
        <Route exact path="/">
        <Home></Home>
        </Route>

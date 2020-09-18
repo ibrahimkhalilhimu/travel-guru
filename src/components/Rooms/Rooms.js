@@ -11,9 +11,9 @@ const Rooms = () => {
     <div className=" bookingPart container">
        
         {
-          roomData.map(({img,room,roomCatagory,Advantage,rating,price})=>
+          roomData.map(({img,room,roomCatagory,Advantage,rating,price,id})=>
           
-          <div className="card text-dark float-center" style={{width: "18rem"}}>
+          <div className="card text-dark float-center" key={id} style={{width: "18rem"}}>
      <img className="card-img-top" src={img} alt="Card image cap"/>
   <div className="card-body">
         <h5 className="card-title">{room}</h5>
